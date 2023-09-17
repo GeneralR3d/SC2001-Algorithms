@@ -31,7 +31,8 @@ def test_sorter(sorter, datasets, threshold=None):
 
 first_magnitude = 3
 second_magnitude = 7
-datasets = generate_data(10**first_magnitude, 10**second_magnitude, seed=42)
+datasets = generate_data(10**first_magnitude, 10**second_magnitude,max_int=10**second_magnitude, seed=42)
+
 
 S = 20
 hybrid_sorter = HybridSort()

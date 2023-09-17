@@ -6,11 +6,12 @@ import matplotlib.pyplot as plt
 
 datasets = generate_data(1000, 100000, 10001, seed = 42)
 
+
 S_values = range(1, 100)
-results = []
+results = [] #outer list
 
 for data in datasets:
-    data_results = []
+    data_results = [] #inner list
     for S in S_values:
         sorter = HybridSort()
 
@@ -22,11 +23,12 @@ for data in datasets:
 
         sorter.comparison_count = 0
 
-    results.append(data_results)
+    results.append(data_results) #this gives 2d list
 
 avg_comparisons = []
 avg_times = []
 
+#results is the outer list
 for S in S_values:
     total_comparisons = sum([result[S - 1][1] for result in results])
     total_time = sum([result[S - 1][2] for result in results])
